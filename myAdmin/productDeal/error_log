@@ -1,0 +1,14 @@
+[16-Feb-2016 10:19:45 Europe/Stockholm] PHP Notice:  Undefined index: Danish in /home/sharkspcom/public_html/myAdmin/productDeal/classes/deal.class.php on line 411
+[16-Feb-2016 10:19:45 Europe/Stockholm] PHP Notice:  Undefined index: Danish in /home/sharkspcom/public_html/myAdmin/productDeal/classes/deal.class.php on line 421
+[16-Feb-2016 10:19:45 Europe/Stockholm] PHP Notice:  Undefined index: Finnish in /home/sharkspcom/public_html/myAdmin/productDeal/classes/deal.class.php on line 411
+[16-Feb-2016 10:19:45 Europe/Stockholm] PHP Notice:  Undefined index: Finnish in /home/sharkspcom/public_html/myAdmin/productDeal/classes/deal.class.php on line 421
+[15-May-2018 15:55:56 Europe/Stockholm] PHP Notice:  Undefined index: category in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 193
+[16-Jul-2018 13:00:21 Europe/Stockholm] PHP Notice:  Undefined index: name in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 251
+[16-Jul-2018 14:10:15 Europe/Stockholm] PHP Notice:  Undefined index: package in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 256
+[16-Jul-2018 14:10:15 Europe/Stockholm] PHP Warning:  Invalid argument supplied for foreach() in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 258
+[16-Jul-2018 14:12:59 Europe/Stockholm] PHP Notice:  Undefined index: categoryy in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 206
+[16-Jul-2018 14:12:59 Europe/Stockholm] PHP Warning:  Invalid argument supplied for foreach() in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 208
+[16-Jul-2018 14:12:59 Europe/Stockholm] PHP Notice:  Undefined index: category in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 215
+[16-Jul-2018 16:06:52 Europe/Stockholm] PHP Notice:  Undefined variable: con in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 631
+[16-Jul-2018 16:06:52 Europe/Stockholm] PHP Fatal error:  Call to a member function setRow() on null in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 631
+[16-Jul-2018 16:08:03 Europe/Stockholm] PHP Notice:  Undefined variable: category_ch in /home/sharkspcom/public_html/new/myAdmin/productDeal/classes/deal.class.php on line 631

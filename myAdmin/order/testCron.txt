@@ -1,0 +1,37 @@
+To: bengtsssonjulia@gmail.com
+Subject: Din beställning 381805 har annullerats
+Message: <div style="text-align: center;"><img alt="" src="https://sharkspeed.com/uploads/images/logo-7.png" style="width: 300px; height: 71px;" /><br />
+Hej Bengtsssonjulia,<br />
+Din best&auml;llning har annullerats!<br />
+<br />
+Kontakta v&aring;r kundtj&auml;nst f&ouml;r mer information g&auml;llande detta.<br />
+<br />
+Du n&aring;r v&aring;r kundtj&auml;nst h&auml;r:&nbsp;<a href="https://sharkspeed.se/kontakt">https://sharkspeed.se/kontakt</a><br />
+<br />
+<strong>Vill du f&aring; telefonkontakt?</strong><br />
+Ring oss direkt p&aring; <strong>010-55 197 86</strong><br />
+(observera att v&aring;r telefontid &auml;r begr&auml;nsad, k&ouml;tid kan f&ouml;rekomma).&nbsp;<br />
+Telefontid: Vardagar 11:00 - 13:00:&nbsp;&nbsp;<br />
+<br />
+<span style="font-size: 16px;"><span style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 22px;">Du kan alltid g&aring; in p&aring;&nbsp;<a href="http://www.sharkspeed.se" target="_blank">www.sharkspeed.se</a>&nbsp;f&ouml;r att se hela v&aring;rt sortiment.</span><br />
+<br />
+<em><span style="font-size: 14px;">Sharkspeed &auml;r ledande inom Motorsport kl&auml;der &amp; tillbeh&ouml;r. Hos oss hittar du allt du kan t&auml;nkas beh&ouml;va n&auml;r du ska ut p&aring; v&auml;garna. Vi har byxor, jackor och st&auml;ll i b&aring;de textil och skinn. Vi har &auml;ven ett brett sortiment p&aring; diverse hj&auml;lmar, skor, handskar och skydd.&nbsp;</span></em><br />
+<br />
+V&auml;lkommen till oss p&aring;&nbsp;<strong><a href="http://www.sharkspeed.com">sharkspeed.se</a></strong></span></div>
+
+Headers: MIME-Version: 1.0
+Content-type: text/html; charset=utf-8
+From: Sharkspeed Orderstatus <no-reply@sharkspeed.com>
+X-Sender: Sharkspeed Orderstatus <no-reply@sharkspeed.com>
+Organization: Shark Speed
+Date: Tue, 17 Dec 2024 12:46:28 +0100
+X-Priority: 3
+Importance: 3
+Content-Transfer-encoding: 8bit
+X-MSMail-Priority: High
+X-Mailer: PHP/7.2.34
+Message-ID: <Tue,_17_Dec_2024_12:46:28_+0100_webmaster@sharkspeed.com>
+
+Additional Params: -ffails@imediahostings.com
+From Name: 
+------------------------

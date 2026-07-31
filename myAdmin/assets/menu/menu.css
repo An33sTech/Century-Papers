@@ -1,0 +1,155 @@
+.IBMS_Main_Menu {
+    position: fixed;
+    top: 66px;
+    width: 265px;
+    left: 0;
+    margin-left: 0;
+    bottom: 0;
+    z-index: 100;
+    border-right: 1px solid #dedede;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+}
+
+.sidebar_hover .IBMS_Main_Menu{
+    width: 265px;
+}
+
+#IBMS_Menu {
+    background: #333333;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: 100%;
+}
+
+#IBMS_Menu ul{
+    border: none;
+    position: relative;
+    border-radius: 0;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /*background-color: #212121;*/
+    background-color: #3c3c3c;
+    backface-visibility: hidden;
+    width: auto;
+    height: 100%;
+}
+
+#IBMS_Menu ul::-webkit-scrollbar {
+  width: 5px;
+  background-color:#212121 ;
+}
+
+#IBMS_Menu ul::-webkit-scrollbar-thumb {
+  background: #878787;
+  border-radius: 0;
+}
+
+#IBMS_Menu a {
+    color: white;
+}
+
+/*heading styles*/
+#IBMS_Menu h3 {
+    font-size: 16px;
+    line-height: 42px;
+    padding: 0 5px 0 33px;
+    cursor: pointer;
+    margin: 0;
+    /*fallback for browsers not supporting gradients*/
+    background: #003040;
+    /*background: linear-gradient(#2a2b2d, #101012);*/
+    background: linear-gradient(#3c3c3c, #2b2b2b);
+}
+
+/*heading hover effect*/
+#IBMS_Menu h3:hover {
+    background: linear-gradient(#222, #000);
+}
+
+/*iconfont styles*/
+#IBMS_Menu h3 .icon {
+    font-size: 18px;
+    position: absolute;
+    top: 12px;
+    left: 7px;
+}
+
+#IBMS_Menu h3 .drop_menu {
+    right: 5px;
+    font-size: 9px;
+    top: 17px;
+    position: absolute;
+}
+
+/*list items*/
+#IBMS_Menu li {
+    list-style-type: none;
+    border-bottom: 1px solid #000;
+    position: relative;
+}
+
+/*links*/
+#IBMS_Menu ul ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 35px;
+    display: block;
+    padding: 0 5px 0 35px;
+    /*transition for smooth hover animation*/
+    transition: all 0.15s;
+    cursor: pointer;
+}
+
+/*hover effect on links*/
+#IBMS_Menu ul ul li a:hover {
+    background: #000;
+    border-left: 5px solid #237e00;
+}
+
+#IBMS_Menu ul ul li.subMenu a {
+    background: #000;
+    border-left: 5px solid #237e00;
+}
+
+/*Lets hide the non active LIs by default*/
+#IBMS_Menu ul ul {
+    display: none;
+}
+
+/* collapse */
+
+.collapse_menu_active.page-wrapper {
+    width: calc(100% - 45px);
+    /*margin-right: 10px;*/
+    display: block !important;
+}
+
+.collapse_menu .menu_h3,
+.collapse_menu .drop_menu{
+    visibility: hidden;
+}
+
+.sidebar_hover .collapse_menu .menu_h3,
+.sidebar_hover .collapse_menu .drop_menu{
+    visibility: visible;
+}
+
+.collapse_icon {
+    display: none !important;
+}
+
+.collapse_menu {
+    width: 45px;
+    white-space: nowrap;
+    z-index: 5;
+}
+
+#IBMS_Menu li.active h3 {
+    background: #237e00 !important;
+}

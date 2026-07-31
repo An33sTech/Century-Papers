@@ -1,0 +1,21 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{env:HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]
+
+RewriteRule assets/(.*) myAdmin/assets/$1
+RewriteRule ^do-([^/]*)_(.*)_(.*)\.secure$ auth.php?do=$1&$2=$3 [L]
+RewriteRule ^do-([^/]*)\.secure$ auth.php?do=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ /index.php?path=$1 [QSA,L]

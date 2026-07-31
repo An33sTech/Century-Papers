@@ -1,0 +1,25 @@
+RewriteEngine On
+RewriteBase /myAdmin/
+
+RewriteCond %{HTTP} on
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+Options +FollowSymLinks
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L,QSA]
+
+RewriteRule ^do-([^/]*)_(.*)_(.*)\.secure$ /auth.php?do=$1&$2=$3 [L]
+RewriteRule ^do-([^/]*)\.secure$ /auth.php?do=$1 [L]
+
+<FilesMatch "^main\.php$">
+    Header set Content-Type "application/javascript; charset=UTF-8"
+</FilesMatch>
+<FilesMatch "^order\.php$">
+    Header set Content-Type "application/javascript; charset=UTF-8"
+</FilesMatch>
+
+RewriteRule ^-(.*) $1/ [L]
+# RewriteRule ^admin IBMS-Admin/ [R,L]

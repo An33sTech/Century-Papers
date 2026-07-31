@@ -1,0 +1,1137 @@
+@import url('../assets/header/header.css');
+@import url('../assets/menu/menu.css');
+
+/*Basic reset*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+#main_Div {
+    min-width: 570px;
+}
+
+.ui-widget {
+    font-size: 0.9em;
+}
+
+/*.content_div {*/
+/*    min-height: 700px;*/
+/*}*/
+
+.color_remove {
+    position: absolute;
+    color: #f05b5b;
+    display: none;
+    right: 0;
+    top: 50%;
+    margin-top: -7px;
+    cursor: pointer;
+}
+
+#cate {
+    position: relative;
+    width: 300px !important;
+    height: 1112px !important;
+    display: inline-block;
+    vertical-align: top;
+    overflow: auto;
+}
+
+.dTableWidth {
+    display: inline-block;
+    width: 68% !important;
+}
+
+#cate ul {
+    list-style: none;
+    padding: 5px 5px;
+}
+
+#cate ul ul {
+    padding: 5px 10px;
+}
+
+#cate .tab-pane {
+    padding: 5px 5px;
+}
+
+.slot_table tr:hover .color_remove {
+    display: inline-block;
+}
+
+.progress {
+    margin: 5px auto;
+}
+
+.col_portion {
+    position: relative;
+    width: 100%;
+}
+
+.col_portion h3 {
+    background: #222222;
+    padding: 5px 10px;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0px 0px;
+}
+
+.main_portion {
+    padding: 15px 15px;
+    width: 100%;
+    position: relative;
+    border: 1px solid #d6d6d6;
+    background: #fafafa;
+}
+
+.hd_no1 {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    display: block;
+}
+
+.col_select_portion {
+    position: relative;
+    width: 250px;
+    margin: 5px 0px;
+}
+
+.col_select_portion select {
+    width: 100%;
+    position: relative;
+    border: 1px solid #aaaaaa;
+    padding: 3px 5px;
+    box-shadow: none;
+}
+
+.col_portion_middle ul {
+    list-style: none;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.col_portion_middle ul li {
+    display: block;
+    font-size: 12px;
+}
+
+.col_portion_middle ul li label {
+    width: 100%;
+    position: relative;
+    font-weight: 500;
+    font-size: 12px;
+}
+
+.col_portion_middle ul li input {
+    display: inline-block;
+    vertical-align: text-bottom;
+    outline: none;
+}
+
+.txt_area {
+    width: 100%;
+    position: relative;
+}
+
+.txt_area textarea {
+    width: 100% !important;
+    position: relative;
+    height: 75px !important;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #aaaaaa;
+    padding: 5px 10px;
+}
+
+.col_portion_middle {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #dddddd;
+}
+
+.col_portion_middle .btn {
+    background: rgba(252, 167, 77, 1);
+    background: -moz-linear-gradient(top,
+            rgba(252, 167, 77, 1) 0%,
+            rgba(248, 143, 56, 1) 50%,
+            rgba(243, 107, 34, 1) 100%);
+    background: -webkit-gradient(left top,
+            left bottom,
+            color-stop(0%, rgba(252, 167, 77, 1)),
+            color-stop(50%, rgba(248, 143, 56, 1)),
+            color-stop(100%, rgba(243, 107, 34, 1)));
+    background: -webkit-linear-gradient(top,
+            rgba(252, 167, 77, 1) 0%,
+            rgba(248, 143, 56, 1) 50%,
+            rgba(243, 107, 34, 1) 100%);
+    background: -o-linear-gradient(top,
+            rgba(252, 167, 77, 1) 0%,
+            rgba(248, 143, 56, 1) 50%,
+            rgba(243, 107, 34, 1) 100%);
+    background: -ms-linear-gradient(top,
+            rgba(252, 167, 77, 1) 0%,
+            rgba(248, 143, 56, 1) 50%,
+            rgba(243, 107, 34, 1) 100%);
+    background: linear-gradient(to bottom,
+            rgba(252, 167, 77, 1) 0%,
+            rgba(248, 143, 56, 1) 50%,
+            rgba(243, 107, 34, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fca74d', endColorstr='#f36b22', GradientType=0);
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 700;
+    display: inline-block;
+    vertical-align: middle;
+    float: right;
+    margin: 10px 0px;
+}
+
+.col_portion_bottom {
+    width: 100%;
+    position: relative;
+    margin-top: 15px;
+}
+
+.col_portion_bottom ul {
+    list-style: none;
+    padding: 0px 0px;
+    margin: 0px 0px;
+}
+
+.col_portion_bottom ul li {
+    display: block;
+    padding: 5px 0px;
+    border-top: 1px solid #dddddd;
+}
+
+.date_portion {
+    font-weight: bold;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.time_portion {
+    font-weight: bold;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px 5px;
+    border-right: 1px solid #2f2f2f;
+}
+
+.tag_portion {
+    font-weight: bold;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 5px;
+}
+
+.col_portion_mid_area {
+    width: 100%;
+    position: relative;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.col_portion_mid_area i {
+    margin: 0px 5px;
+    color: #408539;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.col_portion_mid_area span {
+    display: inline-block;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: 12px;
+    color: #326374;
+    padding: 0px 3px;
+}
+
+.col_portion_mid_area1 {
+    display: block;
+    width: 100%;
+    position: relative;
+    color: #333;
+    font-size: 12px;
+}
+
+#container_div {
+    display: inline-block;
+    float: right;
+    transition: all 0.4s ease;
+    min-height: 100vh;
+}
+.dataTables_wrapper {
+    overflow: auto;
+}
+.container {
+    width: 1040px;
+}
+
+.sub_heading {
+    color: #888;
+}
+
+.main_heading {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Bootstrap */
+
+.page-wrapper {
+    /*margin-left: 225px;*/
+    width: calc(100% - 265px);
+    padding: 70px 20px;
+    position: relative;
+    background: #e9e9e9;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    left: 0;
+}
+
+#main_Div {
+    min-height: 100% !important;
+    position: absolute;
+    width: 100%;
+}
+
+.tabs_arrow {
+    padding-bottom: 3px;
+    border-bottom: 2px solid #87ba41;
+}
+
+.tabs_arrow li {
+    min-width: 70px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+
+.tabs_arrow li a {
+    color: #000;
+    font-weight: bold;
+    padding: 10px 5px 10px 27px;
+    background: #d8d8d8;
+    border-radius: 0px 2px 2px 0px;
+    position: relative;
+    display: block;
+    margin-right: 0px;
+}
+
+.tabs_arrow_div li a {
+    border-radius: 0px;
+}
+
+.tabs_arrow_div {
+    display: inline-block;
+    width: 100%;
+}
+
+.tabs_arrow li:first-child a {
+    padding: 10px 5px 10px 10px;
+}
+
+.tabs_arrow li a:hover,
+.tabs_arrow li.active a,
+.tabs_arrow li.active a:hover {
+    background-color: #87ba41;
+    background: #87ba41 !important;
+    color: #fff !important;
+}
+
+.tabs_arrow li a:hover:after,
+.tabs_arrow li.active a:after {
+    border-left-color: #87ba41;
+}
+
+.tabs_arrow li a:before {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 21px solid white;
+    position: absolute;
+    top: 0%;
+    margin-top: 0px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+}
+
+.tabs_arrow li a:after {
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid #d8d8d8;
+    position: absolute;
+    top: 0px;
+    margin-top: 0px;
+    left: 100%;
+    z-index: 2;
+    margin-left: 0px;
+}
+
+.dataTables_info {
+    margin: 15px 0;
+    display: inline-block;
+    float: left;
+}
+
+.dataTables_length {
+    margin-bottom: 15px;
+}
+
+.dataTables_filter {
+    text-align: right;
+}
+
+.DTTT {
+    margin-bottom: 10px;
+}
+
+.modal-body {
+    overflow: auto;
+}
+
+@media screen and (max-width: 767px) {
+
+    .bootTable table input[type="text"],
+    .bootTable table input[type="number"] {
+        padding: 6px 4px;
+    }
+
+    .bootTable table td {
+        padding: 4px !important;
+    }
+
+    .bootTable table th {
+        padding: 6px 4px !important;
+    }
+}
+
+/* Bootstrap end */
+ul.ColVis_collection {
+    width: auto !important;
+}
+
+.selectpicker {
+    width: 300px;
+}
+
+.color_label {
+    width: 46px;
+}
+
+.tableIBMS {
+    border-spacing: 2px;
+    border-collapse: separate;
+    font-size: 13px;
+}
+
+.tableIBMS th {
+    color: #fff;
+    border-radius: 5px;
+    background-color: #222 !important;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.tableIBMS th:last-child {
+    min-width: 100px;
+}
+
+.tableIBMS td {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.tableIBMS .tableBgGray {
+    background-color: #eee;
+}
+
+.tableIBMS td {
+    position: relative;
+}
+
+.preview {
+    cursor: pointer;
+}
+
+.borderIfNotabs {
+    border-bottom: 2px solid #87ba41;
+}
+
+.gray-tr th,
+.gray-tr td {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle !important;
+    background: #999 !important;
+    color: #000;
+    text-shadow: 0px 0px 32px #fff;
+}
+
+.gray-tr:hover th,
+.gray-tr:hover td {
+    background: #999 !important;
+    color: #000;
+}
+
+.tab_heading {
+    color: #a0a0a0;
+    font-size: 28px;
+}
+
+.sTable {
+    border-spacing: 2px;
+    border-collapse: separate;
+    font-size: 13px;
+}
+
+.sTable thead td,
+.sTable thead th {
+    color: #fff;
+    border-radius: 5px;
+    background-color: #222 !important;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.sTable td {
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: middle !important;
+}
+
+.ui-autocomplete {
+    max-height: 170px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+}
+
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+    height: 170px;
+}
+
+/* JQuery ui confluict with bootstrap */
+
+.ui-dialog-titlebar-close {
+    background: url("../assets/jquery-ui/css/images/ui-icons_222222_256x240.png") -96px -128px;
+}
+
+.ui-dialog-titlebar-close {
+    border: 1px solid #d3d3d3;
+    border-radius: 4px;
+    font-weight: normal;
+    color: #555555;
+}
+
+.ui-dialog-titlebar-close:hover {
+    border: 1px solid #999;
+}
+
+.selectCSS {
+    width: 115px;
+    padding: 2px;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.productQTYInput {
+    width: 50%;
+    padding: 2px;
+}
+
+.QTYSubmitBtn {
+    padding: 2px;
+    min-width: 53px;
+}
+
+.qtyRemoveTDLast,
+.qtyAddTDLast {
+    min-width: 166px;
+}
+
+.bg-black {
+    /* . navbar-inverse */
+    color: #fff;
+    padding: 5px;
+    margin: 0 0 10px 0;
+    font-size: 15px;
+}
+
+.notifications {
+    width: 400px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 999;
+}
+
+.notification {
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 8px 0;
+}
+
+.notification:hover {
+    opacity: 1 !important;
+}
+
+.notification .notification_close {
+    position: absolute;
+    right: 0px;
+    background: #999;
+    padding: 3px 9px;
+    color: #000;
+    z-index: 3;
+    font-weight: bold;
+    cursor: pointer;
+    height: 27px;
+}
+
+.notification .notification_text {
+    padding: 2px 8px 6px;
+    color: #fff;
+    font-family: arial;
+    text-shadow: 0px 0px 1px #000;
+    min-height: 50px;
+}
+
+.notification_text.btn-warning {
+    color: #000;
+    text-shadow: none;
+}
+
+.notification .notification_heading {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 5px 4px 6px;
+    color: #fff;
+    height: 27px;
+}
+
+#vendorProdcutList tr:hover {
+    color: #000;
+}
+
+.trChecked {
+    color: #000;
+}
+
+.editShipping {
+    position: absolute;
+    top: -6px;
+    right: 35px;
+}
+
+.deleteShipping {
+    position: absolute;
+    top: -6px;
+    right: 0px;
+}
+
+.editShipping:hover,
+.deleteShipping:hover {
+    background: #fff;
+}
+
+.combineicon {
+    position: absolute;
+    left: 10px;
+    top: 7px;
+}
+
+#reportSelectedProduct table td,
+#reportSelectedProduct table th {
+    padding: 4px 5px;
+}
+
+#reportSelectedProduct table th {
+    font-size: 11px;
+}
+
+#reportSelectedProduct table input {
+    display: none;
+}
+
+table td {
+    position: relative;
+}
+
+.reportReview .form-group {
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+
+.orderAddProductNotAllow {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background: yellow;
+    z-index: 9;
+    opacity: 0.2;
+    cursor: not-allowed;
+}
+
+.newProduct {
+    position: relative;
+    /*width: 100%;*/
+}
+
+.singleAlbum {
+    display: inline-block;
+    width: 210px;
+    text-align: center;
+    border: 2px solid #eee;
+    height: 210px;
+    position: relative;
+    margin: 7px;
+    float: left;
+    height: 250px;
+}
+
+.albumMange {
+    position: absolute;
+    bottom: 0;
+    background: #eee;
+    padding: 4px 0;
+}
+
+.singleAlbum .albumImage {
+    height: 155px;
+    width: 100%;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.singleAlbum .albumImage img {
+    max-height: 100%;
+    max-width: 100%;
+    display: inline-block;
+}
+
+.albumSortTop {
+    background: #ccc;
+    height: 20px;
+    cursor: move;
+}
+
+#dropbox .message {
+    display: block !important;
+    color: #fff;
+    position: absolute;
+    left: 40%;
+    bottom: 0;
+}
+
+#dropbox {
+    padding-bottom: 100px !important;
+}
+
+.allProductInfo {
+    float: left;
+    width: 225px;
+    padding: 5px;
+    background: #ddd;
+    margin: 8px;
+    height: 200px;
+    position: relative;
+}
+
+.allProductInfo .pName {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #ccc;
+    width: 100%;
+    text-align: center;
+}
+
+.allProductInfo .oldPrice {
+    font-size: 11px;
+    text-decoration: line-through;
+    color: red;
+}
+
+.allProductInfo .pImg {
+    height: 160px;
+    text-align: center;
+    width: 100%;
+}
+
+.allProductInfo .pImg img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.relative {
+    position: relative;
+}
+
+.relative.panel .panel-heading {
+    padding-left: 34px;
+}
+
+.menu_action {
+    top: 3px;
+    position: absolute;
+    right: 5px;
+}
+
+.menuSortDiv {
+    display: inline-block;
+    float: left;
+    padding: 9px 9px;
+    position: absolute;
+    left: 0;
+    cursor: move;
+    background: #ccc;
+    top: 0;
+    color: #000;
+    font-weight: bold;
+}
+
+/*graph link hide*/
+svg>text[text-anchor="end"] {
+    display: none !important;
+}
+
+.graphDiv {
+    height: 350px;
+}
+
+.countMeDiv {
+    color: #222222;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.heading_invoice h2 {
+    float: left;
+}
+
+.heading_invoice .countMeDiv {
+    float: right;
+    position: relative;
+    top: 0px;
+    margin-top: 20px;
+}
+
+.heading_invoice {
+    display: inline-block;
+    width: 100%;
+}
+
+.invoice_price_div {
+    display: inline-block;
+    background-color: #a2a0a0;
+    padding: 2px 9px;
+    border-radius: 9px;
+    margin: 0 2px;
+    min-width: 65px;
+    text-align: center;
+}
+
+.tab-content .container-fluid {
+    position: relative;
+}
+
+.tableIBMS .custom_width {
+    width: 110px;
+}
+
+.deduct_products {
+    text-wrap: nowrap;
+}
+
+.deduct_products .pro_name {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.deleteStatus input[type="checkbox"]:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+    outline: none;
+    box-shadow: none;
+}
+
+.deleteStatus input[type="checkbox"] {
+    margin: 0;
+    height: auto;
+    height: 15px !important;
+    width: 15px !important;
+}
+
+.stock_deduct_div_item input[type="checkbox"],
+input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 2px !important;
+}
+
+.pro_qty,
+.pro_ded_text {
+    font-size: 1.4rem;
+}
+
+/* Footer */
+
+footer.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    left: 0;
+}
+
+.bootstrap-tagsinput {
+    display: block;
+    width: 100%;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.42857143;
+    color: #555;
+    margin-top: 15px;
+}
+
+.bootstrap-tagsinput input {
+    width: 100%;
+}
+
+.bootstrap-tagsinput .tag {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #007bff;
+    color: #fff;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.bootstrap-tagsinput .tag .tag-remove {
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+.todo-div {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.todo-div h2 {
+    margin-top: 0;
+    font-weight: bold;
+}
+.todo-div .todo-inner-div {
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+.todo-div .todo-inner-div:last-child{
+border:none;
+}
+.todo-div .todo-inner-left {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.todo-div .todo-inner-left i {
+    font-size: 20px;
+}
+
+.todo-div .text-count {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.todo-div .todo-inner-div a{
+     color:#999;
+}
+.orders-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+.orders-div .dates-list {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.orders-inner-arrows {
+    display: flex;
+    align-items: start; 
+    gap: 8rem;
+    padding: 0 2rem;
+}
+
+.orders-inner-arrows span {
+    font-weight: bold;
+    color: #999;
+}
+
+.orders-inner-arrows .arrows button {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: navajowhite;
+    background: #eee;
+    color: black;
+}
+.orders-div .orders-inner-div {
+    display: flex;
+    gap: 5rem;
+    margin-top: 2rem;
+}
+
+.orders-div .orders-inner-div .data span {
+    font-weight: 600;
+    color: #999;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.orders-div .orders-inner-div .data p {
+    font-weight: 900;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* checkoutOfferModal */
+
+#checkoutOfferModal .modal-title{
+    text-align: center;
+}
+
+.check_out_offer_main .check_out_offer_head h4{
+    font-weight: bold;
+}
+
+.check_out_offer_main .check_out_offer_body .items{
+    gap: 2rem;
+    align-items: center;
+}
+.check_out_offer_main .check_out_offer_body .items.relative{
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 10px;
+    background: #3f51b59c;
+}
+.check_out_offer_main .check_out_offer_body .items label{
+    display: flex;
+    align-items: center; 
+    width: 95%;
+    gap:1rem;
+    justify-content: space-between;
+}
+
+.check_out_offer_main .check_out_offer_body .items label .left,
+.check_out_offer_main .check_out_offer_body .items label .right{
+    display: flex;
+    align-items: center;
+    gap:1rem
+}
+
+.check_out_offer_main .check_out_offer_body .items label .left{
+    width:65%;
+}
+
+.check_out_offer_main .check_out_offer_body .items label .left img{
+    width: auto;
+    height: auto;
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.check_out_offer_main .check_out_offer_body .items label .left h4{
+    text-align: start;
+}
+
+.check_out_offer_main .check_out_offer_body .items label .right{
+    width:35%;
+}
+
+.check_out_offer_main .check_out_offer_body .items label .right h5{
+    font-weight:900;
+}
+
+.check_out_offer_main .check_out_offer_body .items label .right span{
+    font-size: 2rem;
+}
+
+.check_out_offer_main .check_out_offer_body .items label .right i{
+    font-size:4rem;    
+}
+.check_out_offer_main .check_out_offer_body .items .checkbox-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.check_out_offer_main .check_out_offer_body .items .checkbox-div label{
+    line-height: 1;
+}
+#checkoutOfferModal .modal-footer{
+    text-align: start;
+    font-weight:900;
+}
+
+#checkoutOfferModal .modal-footer h4{
+    font-weight:bold;
+}
+.uniqueClass tr td:first-child{
+    padding: 0;
+}
+.uniqueClass .uniqueLabel{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
