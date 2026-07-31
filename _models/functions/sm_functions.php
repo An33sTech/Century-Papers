@@ -94,18 +94,6 @@ function getTranslationFromGoogle($tempA, $lang = false, $debug = false)
 
         if (!empty($res)) {
             $translate = $res['translate'];
-        } else {
-            $trans_url = "https://translation.googleapis.com/language/translate/v2?q=" . $q . "&target=" . $target . "&key=AIzaSyAV0L4Xs9ydgWq4CFEGZCdT4phGc6gNNAM";
-            if ($debug) {
-                echo $trans_url;
-            }
-            $return = file_get_contents("https://translation.googleapis.com/language/translate/v2?q=" . $q . "&target=" . $target . "&key=AIzaSyAV0L4Xs9ydgWq4CFEGZCdT4phGc6gNNAM");
-
-            $return = json_decode($return);
-            $translate = $return->data->translations[0]->translatedText;
-
-            $sql = "INSERT INTO `google_translate` (`text`, `lang`, `translate`, `hash`) VALUES (?, ?, ?, ?)";
-            $res = $dbF->setRow($sql, array($temp, $webLang, $translate, $db_hash));
         }
     }
 
