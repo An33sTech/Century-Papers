@@ -7,9 +7,9 @@ $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $uri_segments = explode('/', $uri_path);
 $default_lang = defaultWebLanguage();
 
-if (!empty($uri_segments[2])) { // $uri_segments[2] When it is sub folder otherwise $uri_segments[1]
-    unset($uri_segments[1]); // Only use When it is sub folder otherwise comment it
-    $uri_segments = array_values($uri_segments); // Only use When it is sub folder otherwise comment it
+if (!empty($uri_segments[1])) { // $uri_segments[2] When it is sub folder otherwise $uri_segments[1]
+    // unset($uri_segments[1]); // Only use When it is sub folder otherwise comment it
+    // $uri_segments = array_values($uri_segments); // Only use When it is sub folder otherwise comment it
     $full_hierarchy = implode('/', $uri_segments);
 } else {
     $full_hierarchy = "";
