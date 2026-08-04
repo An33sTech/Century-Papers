@@ -206,10 +206,10 @@ class setting extends object_class{
         $_w['Show Long Time Popup?'] = '' ;
         $_w['Price Calculation'] = '' ;
         $_w['Do not forget products popup'] = '' ;
-        $_w[''] = '' ;
-        $_w[''] = '' ;
-        $_w[''] = '' ;
-        $_w[''] = '' ;
+        $_w['Current password is incorrect.'] = '' ;
+        $_w['Invalid account.'] = '' ;
+        $_w['Invalid name or email.'] = '' ;
+        $_w['Current Password'] = '' ;
         $_w[''] = '' ;
         $_w[''] = '' ;
         $_w[''] = '' ;
@@ -308,37 +308,121 @@ class setting extends object_class{
     }
 
 
-    public function AccountSubmit(){
+        public function AccountSubmit()
+    {
         global $_e;
-        if(!empty($_POST['acc_email']) && !empty($_POST['acc_name'])){
-            if(!$this->functions->getFormToken('AccountSetting')){return false;}
-            $userId = $_POST['userId'];
-
-            $sql ="UPDATE accounts SET
-                    `acc_name` = ?,
-                     `acc_email` =?";
-            $array = array($_POST['acc_name'],$_POST['acc_email']);
-
-            if(isset($_POST['password']) && isset($_POST['retype_password']) && $_POST['retype_password'] !=''){
-                if($_POST['password'] == $_POST['retype_password']){
-                    $password = $_POST['password'];
-                    $password = $this->functions->encode($password);
-                    $sql .=', `acc_pass`=? ';
-                    $array[]= $password;
-                }else{
-                    $this->functions->notificationError(_js(_uc($_e['Error'])),_js(_uc($_e['Password Not match'])),'btn-warning');
-                    return false;
-                }
-            }
-            $array[] = $userId;
-            $sql .= " WHERE acc_id = ?";
-            $this->dbF->setRow($sql,$array);
-            if($this->dbF->rowCount){
-                $this->functions->notificationError(_js(_uc($_e['Update'])),_js(_uc($_e['Account Setting Update Successfully'])),'btn-success');
-            }else{
-                $this->functions->notificationError(_js(_uc($_e['Fail'])),_js(_uc($_e['Account Setting Update Fail'])),'btn-danger');
-            }
+    
+        if (empty($_POST['acc_email']) || empty($_POST['acc_name'])) {
+            return false;
         }
+    
+        if (!$this->functions->getFormToken('AccountSetting')) {
+            return false;
+        }
+    
+        $userId = (int)($_SESSION['_uid'] ?? 0);
+    
+        if ($userId <= 0) {
+            return false;
+        }
+    
+        $accName  = trim((string)$_POST['acc_name']);
+        $accEmail = strtolower(trim((string)$_POST['acc_email']));
+    
+        if ($accName === '' || !filter_var($accEmail, FILTER_VALIDATE_EMAIL)) {
+            $this->functions->notificationError(_js(_uc($_e['Error'])), _js(_uc($_e['Invalid name or email.'])), 'btn-danger');
+            return false;
+        }
+    
+        $sql = "UPDATE accounts SET
+                `acc_name` = ?,
+                `acc_email` = ?";
+    
+        $array = [$accName, $accEmail];
+    
+        $password       = isset($_POST['password']) ? (string)$_POST['password'] : '';
+        $retypePassword = isset($_POST['retype_password']) ? (string)$_POST['retype_password'] : '';
+        $currentPass    = isset($_POST['current_password']) ? (string)$_POST['current_password'] : '';
+    
+        if ($password !== '' || $retypePassword !== '') {
+            if ($password !== $retypePassword) {
+                $this->functions->notificationError(_js(_uc($_e['Error'])), _js(_uc($_e['Password Not match'])), 'btn-warning');
+                return false;
+            }
+    
+            [$passwordOk, $passwordError] = $this->strongPasswordCheck($password);
+    
+            if (!$passwordOk) {
+                $this->functions->notificationError(_js(_uc($_e['Error'])), _js($passwordError), 'btn-warning');
+                return false;
+            }
+    
+            $checkSql = "SELECT `acc_pass`
+                         FROM `accounts`
+                         WHERE `acc_id` = ?
+                         LIMIT 1";
+    
+            $user = $this->dbF->getRow($checkSql, [$userId]);
+    
+            if (!$user || $this->dbF->rowCount <= 0) {
+                $this->functions->notificationError(_js(_uc($_e['Error'])), _js(_uc($_e['Invalid account.'])), 'btn-danger');
+                return false;
+            }
+    
+            if ($currentPass === '' || !password_verify($currentPass, $user['acc_pass'])) {
+                $this->functions->notificationError(_js(_uc($_e['Error'])), _js(_uc($_e['Current password is incorrect.'])), 'btn-danger');
+                return false;
+            }
+    
+            $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+    
+            $sql .= ", `acc_pass` = ?, `acc_session` = ''";
+            $array[] = $passwordHash;
+        }
+    
+        $array[] = $userId;
+        $sql .= " WHERE acc_id = ?";
+    
+        $this->dbF->setRow($sql, $array);
+    
+        if ($this->dbF->rowCount) {
+            if ($password !== '') {
+                session_unset();
+                session_destroy();
+    
+                header("Location: " . WEB_ADMIN_URL, true, 302);
+                exit;
+            }
+    
+            $this->functions->notificationError(_js(_uc($_e['Update'])), _js(_uc($_e['Account Setting Update Successfully'])), 'btn-success');
+        } else {
+            $this->functions->notificationError(_js(_uc($_e['Fail'])), _js(_uc($_e['Account Setting Update Fail'])), 'btn-danger');
+        }
+    }
+
+        public function strongPasswordCheck(string $password): array
+    {
+        if (strlen($password) < 8) {
+            return [false, 'Password must be at least 8 characters long.'];
+        }
+    
+        if (!preg_match('/[A-Z]/', $password)) {
+            return [false, 'Password must contain at least one uppercase letter.'];
+        }
+    
+        if (!preg_match('/[a-z]/', $password)) {
+            return [false, 'Password must contain at least one lowercase letter.'];
+        }
+    
+        if (!preg_match('/[0-9]/', $password)) {
+            return [false, 'Password must contain at least one number.'];
+        }
+    
+        if (!preg_match('/[^A-Za-z0-9]/', $password)) {
+            return [false, 'Password must contain at least one special character.'];
+        }
+    
+        return [true, ''];
     }
 
     public function hardWordsEdit(){
