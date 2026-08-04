@@ -1,9 +1,9 @@
 <?php
 //Edit Global Setting Values , see below
-define("DB_HOST", ''); // Enter host eg:localhost
-define("DB_USER", ''); // Enter database username
-define("DB_PASS", ''); // Enter database user password
-define("DB_NAME", ''); // Enter database name 
+define("DB_HOST", 'localhost'); // Enter host eg:localhost
+define("DB_USER", 'admin_centurypapers'); // Enter database username
+define("DB_PASS", 'oqc7ww9cZSo2^*Hb'); // Enter database user password
+define("DB_NAME", 'admin_centurypapersdb'); // Enter database name 
 define("DB_TYPE", 'mysql');
 
 
@@ -69,7 +69,7 @@ trait global_setting
 
     /////////////////////// Error Reporting Setting ////////////////
     public $showErrorOnLocal = false;
-    public $showErrorOnLive = false;
+    public $showErrorOnLive = true;
 
 
     /////////////////////// Error Reporting Setting END ////////////////
