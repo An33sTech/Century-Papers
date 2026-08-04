@@ -967,10 +967,14 @@ trait common_function
 
     public function setFormToken($TokenName, $echo = true)
     {
-        $invoiceToken = uniqid();
-        $_SESSION['tokens'][$TokenName . 'Token'] = $invoiceToken;
-        $invoiceToken = $_SESSION['tokens'][$TokenName . 'Token'];
-        $temp = '<input type="hidden" name="' . $TokenName . 'Token" value="' . $invoiceToken . '" />';
+        if (empty($_SESSION['tokens'][$TokenName . 'Token'])) {
+            $_SESSION['tokens'][$TokenName . 'Token'] = bin2hex(random_bytes(32));
+        }
+    
+        $token = $_SESSION['tokens'][$TokenName . 'Token'];
+    
+        $temp = '<input type="hidden" name="' . htmlspecialchars($TokenName . 'Token', ENT_QUOTES, 'UTF-8') . '" value="' . htmlspecialchars($token, ENT_QUOTES, 'UTF-8') . '" />';
+    
         if ($echo) {
             echo $temp;
         } else {
@@ -1008,29 +1012,31 @@ trait common_function
 
     public function getFormToken($TokenName, $autoCheckRecommended = true, $echo = true)
     {
-        if (isset($_SESSION['tokens'][$TokenName . 'Token'])) {
-            $Token = $_SESSION['tokens'][$TokenName . 'Token'];
-
-            if ($autoCheckRecommended) {
-                if (isset($_POST[$TokenName . 'Token']) && $_POST[$TokenName . 'Token'] == $Token) {
-                    $_SESSION['tokens'][$TokenName . 'Token'] = 'Dismiss';
-                    unset($_SESSION['tokens'][$TokenName . 'Token']);
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-            //If autoCheckRecommended is false then;
-            if ($echo) {
-                echo $Token;
-            } else {
-                return $Token;
-            }
-        } else {
+        $sessionKey = $TokenName . 'Token';
+    
+        if (empty($_SESSION['tokens'][$sessionKey])) {
             return false;
         }
+    
+        $token = $_SESSION['tokens'][$sessionKey];
+    
+        if ($autoCheckRecommended) {
+            if (
+                isset($_POST[$sessionKey]) &&
+                hash_equals($token, $_POST[$sessionKey])
+            ) {
+                return true;
+            }
+    
+            return false;
+        }
+    
+        if ($echo) {
+            echo htmlspecialchars($token, ENT_QUOTES, 'UTF-8');
+        } else {
+            return $token;
+        }
     }
-
     /**
      * @param $val
      * this is for to send secure data in link
@@ -1178,7 +1184,10 @@ trait common_function
         //     $subject    =   str_ireplace("{{trackingNo}}",$temp,$subject);
         // }
 
-
+        if (isset($mailArray['reset_link'])) {
+            $temp = $mailArray['reset_link'];
+            $msg = str_ireplace("{{reset_link}}", $temp, $msg);
+        }
 
 
         if (isset($mailArray['returnPro'])) {
