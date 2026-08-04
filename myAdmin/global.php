@@ -1,17 +1,20 @@
 <?php
- /* NOTE
- Search PENDING inproject, pending work need to do after a short time.
- REMOVE1 search, its need to remove after its work complete... it is use for testing.
- */
+if (session_status() === PHP_SESSION_NONE || session_id() === '') {
 
-//   PENDING session active needed
-//  session_save_path(__DIR__."/../__sessions_overridepath");
-// session_name("_uth"); 
+    session_set_cookie_params([
+        'lifetime' => 3600 * 24 * 7,
+        'path'     => '/',
+        'secure'   => true,
+        'httponly' => true,
+        'samesite' => 'Lax'
+    ]);
 
-    if (session_status() == PHP_SESSION_NONE || session_id() == '') {
-        session_set_cookie_params(3600*24*7,"/");
-        session_start();
-    }
+    ini_set('session.cookie_secure', '1');
+    ini_set('session.cookie_httponly', '1');
+    ini_set('session.cookie_samesite', 'Lax');
+
+    session_start();
+}
 
 /*****************************************/
 global $adminUserForDb;
