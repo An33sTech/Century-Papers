@@ -1,27 +1,47 @@
-
 function passM() {
     var pass = document.getElementById("pass").value;
     var rpass = document.getElementById("rpass").value;
-    if (pass.length >= 4) {
-    if (pass == rpass) {
-    document.getElementById("pm").style.color = "green";
-    document.getElementById("pm").innerHTML = "Password Matched!";
-    document.getElementById("signup_btn").disabled = false;
+    var current = document.getElementById("current_password").value;
+    var pm = document.getElementById("pm");
+    var btn = document.getElementById("signup_btn");
+
+    if (pass === '' && rpass === '') {
+        pm.innerHTML = '';
+        btn.disabled = false;
+        return;
     }
-else {
-    document.getElementById("pm").style.color = "red";
-    document.getElementById("pm").innerHTML = "Password Not Matched!";
-    document.getElementById("signup_btn").disabled = true;
+
+    if (current === '') {
+        pm.style.color = "red";
+        pm.innerHTML = "Current password is required to change password.";
+        btn.disabled = true;
+        return;
     }
-}
-else {
-    document.getElementById("pm").style.color = "orange";
-    document.getElementById("pm").innerHTML = "Atleat 4 characters!";
-    document.getElementById("signup_btn").disabled = true;
+
+    if (pass.length < 8) {
+        pm.style.color = "orange";
+        pm.innerHTML = "At least 8 characters required.";
+        btn.disabled = true;
+        return;
     }
-if(pass=='' && rpass==''){
-    document.getElementById("signup_btn").disabled = false;
+
+    if (!/[A-Z]/.test(pass) || !/[a-z]/.test(pass) || !/[0-9]/.test(pass) || !/[^A-Za-z0-9]/.test(pass)) {
+        pm.style.color = "orange";
+        pm.innerHTML = "Use uppercase, lowercase, number and special character.";
+        btn.disabled = true;
+        return;
     }
+
+    if (pass !== rpass) {
+        pm.style.color = "red";
+        pm.innerHTML = "Password Not Matched!";
+        btn.disabled = true;
+        return;
+    }
+
+    pm.style.color = "green";
+    pm.innerHTML = "Password Matched!";
+    btn.disabled = false;
 }
 function vali() {
     var u_l = document.getElementById("user").value.length;
